@@ -8,21 +8,21 @@ def checkmate(board):
             print("Error: Board is not square")
             return
 
-    king_pos = None #ประกาศตัวแปล
+    king_pos = []
     for r in range(size): #ไล่หาใน row ว่ามี king ไหม
         for c in range(size): #ไล่หาใน column ว่ามี king ไหม
             if grid[r][c] == "K": 
-                king_pos = (r, c) #บอกตน.คิง
+                king_pos.append((r, c)) #บอกตน.คิง
             
 
-    if not king_pos:
+    if len(king_pos) == 0:
         print("Fail")
         return
     if len(king_pos) > 1:
         print("Error: More than one King")
         return
 
-    kr, kc = king_pos
+    kr, kc = king_pos[0]
 
     # Pawn
     for dr, dc in [(1,-1), (1,1)]: #ซ้าบล่าง ขวาล่าง

@@ -4,7 +4,7 @@ def main():
     board = """\
 ..Q.
 .K..
-..K.
+....
 ....\
 """
     checkmate(board)  # ควรได้ "Success"
